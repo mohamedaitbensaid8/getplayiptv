@@ -6,7 +6,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <title>getplayiptv | Abonnement IPTV France — TV, Films, Sports</title>
-  <meta name="description" content="Abonnement IPTV premium en France : TV en direct, films, séries, sports et Smart TV. Activation rapide par e-mail avec support WhatsApp 24/7.">
+  <meta name="description" content="Abonnement IPTV premium en France : TV en direct, films, séries, sports et Smart TV. Activation rapide et support par e-mail.">
   <meta name="google-site-verification" content="5GDEV9DaFzwvfPo8gUBsuTM1k-0i2vjw8g5rMhTs7sQ">
   <meta name="robots" content="index, follow, max-image-preview:large">
   <meta name="language" content="fr-FR">
@@ -16,7 +16,6 @@
   <link rel="alternate" hreflang="fr-FR" href="https://getplayiptv.com/">
   <link rel="alternate" hreflang="x-default" href="https://getplayiptv.com/">
   <link rel="home" href="/">
-  <link rel="admin" href="/admin">
   <meta name="geo.region" content="FR">
   <meta name="geo.placename" content="France">
   <meta name="geo.position" content="46.2276;2.2137">
@@ -26,7 +25,7 @@
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="getplayiptv">
   <meta property="og:title" content="getplayiptv | Abonnement IPTV France — TV, Films, Sports">
-  <meta property="og:description" content="Abonnement IPTV premium en France : TV en direct, films, séries, sports et Smart TV. Activation rapide par e-mail avec support WhatsApp 24/7.">
+  <meta property="og:description" content="Abonnement IPTV premium en France : TV en direct, films, séries, sports et Smart TV. Activation rapide et support par e-mail.">
   <meta property="og:url" content="https://getplayiptv.com/">
   <meta property="og:image" content="https://getplayiptv.com/Gemini_Generated_Image_8xu4qp8xu4qp8xu4.png">
   <meta property="og:image:alt" content="getplayiptv logo">
@@ -34,7 +33,7 @@
   <meta property="og:image:height" content="630">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="getplayiptv | Abonnement IPTV France — TV, Films, Sports">
-  <meta name="twitter:description" content="Abonnement IPTV premium en France : TV en direct, films, séries, sports et Smart TV. Activation rapide par e-mail avec support WhatsApp 24/7.">
+  <meta name="twitter:description" content="Abonnement IPTV premium en France : TV en direct, films, séries, sports et Smart TV. Activation rapide et support par e-mail.">
   <meta name="twitter:image" content="https://getplayiptv.com/Gemini_Generated_Image_8xu4qp8xu4qp8xu4.png">
   <script type="application/ld+json">
   {
@@ -115,8 +114,6 @@
   <script src="https://cdn.tailwindcss.com/3.4.17"></script>
   <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet">
   <script src="https://cdn.jsdelivr.net/npm/lucide@0.263.0/dist/umd/lucide.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-  <script src="supabase-config.js"></script>
 
   <style>
         * { font-family: 'Raleway', sans-serif; }
@@ -140,80 +137,39 @@
         .compat-icon svg { width: 36px; height: 36px; color: #D4AF37; }
         .footer-social-link { width: 36px; height: 36px; border-radius: 9999px; display: inline-flex; align-items: center; justify-content: center; flex: 0 0 36px; }
         .footer-social-link svg { width: 20px; height: 20px; }
-        .whatsapp-float {
+        .email-float {
             position: fixed;
             bottom: 25px;
             left: 25px;
             width: 72px;
             height: 72px;
-            background: linear-gradient(180deg, #25d366 0%, #1ebc57 100%);
+            background: linear-gradient(180deg, #D4AF37 0%, #b8941f 100%);
             color: #ffffff;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
             text-decoration: none;
-            box-shadow: 0 18px 35px rgba(0, 0, 0, 0.25), 0 0 0 10px rgba(37, 211, 102, 0.08);
+            box-shadow: 0 18px 35px rgba(0, 0, 0, 0.25), 0 0 0 10px rgba(212, 175, 55, 0.08);
             border: 2px solid rgba(255, 255, 255, 0.16);
             z-index: 9999;
             transition: transform 0.2s ease, box-shadow 0.2s ease;
-            animation: whatsapp-pulse 2.2s infinite;
             overflow: visible;
         }
 
-        .whatsapp-float:hover {
+        .email-float:hover {
             transform: scale(1.07);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3), 0 0 0 12px rgba(37, 211, 102, 0.12);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3), 0 0 0 12px rgba(212, 175, 55, 0.12);
         }
 
-        .whatsapp-float::before {
-            content: '';
-            position: absolute;
-            inset: -10px;
-            border-radius: 50%;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            pointer-events: none;
-        }
-
-        .whatsapp-float svg {
-            width: 38px;
-            height: 38px;
-            fill: #ffffff;
-            filter: drop-shadow(0 2px 6px rgba(0, 0, 0, 0.2));
-        }
-
-        .whatsapp-tooltip {
-            position: absolute;
-            left: 70px;
-            background-color: #0A1B3D;
-            color: #ffffff;
-            padding: 8px 14px;
-            border-radius: 8px;
-            font-size: 13px;
-            font-weight: 600;
-            white-space: nowrap;
-            opacity: 0;
-            visibility: hidden;
-            transition: opacity 0.3s ease, visibility 0.3s ease;
-            pointer-events: none;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
-            border: 1px solid rgba(212, 175, 55, 0.3);
-        }
-
-        html[dir="rtl"] .whatsapp-tooltip {
-            left: auto;
-            right: 70px;
-        }
-
-        .whatsapp-float:hover .whatsapp-tooltip {
-            opacity: 1;
-            visibility: visible;
-        }
-
-        @keyframes whatsapp-pulse {
-            0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); }
-            70% { box-shadow: 0 0 0 15px rgba(37, 211, 102, 0); }
-            100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
+        .email-float svg {
+            width: 34px;
+            height: 34px;
+            fill: none;
+            stroke: #06162F;
+            stroke-width: 1.8;
+            stroke-linecap: round;
+            stroke-linejoin: round;
         }
 
         /* Custom scrollbar */
@@ -359,6 +315,7 @@
     <div class="max-w-7xl mx-auto text-center">
 <h2 data-i18n="pricing-title" class="text-3xl font-bold mb-4 text-[#F5F7FA]">Choisissez votre abonnement IPTV pour la France</h2>
     <p data-i18n="pricing-subtitle" class="opacity-60 mb-12 text-[#F5F7FA]">Des offres IPTV flexibles pour la France. Annulez à tout moment.</p>
+    <p id="paypal-status" class="text-sm text-amber-300 mb-6" role="status" aria-live="polite"></p>
      
      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
       
@@ -373,7 +330,7 @@
         <li data-i18n="plan-1-f2">✓ Qualité HD & Full HD</li>
         <li data-i18n="plan-1-f3">✓ 1 Appareil connecté</li>
        </ul>
-       <button onclick="openCheckout('1_month')" data-i18n="plan-select" class="block w-full py-3 rounded-lg text-sm font-bold border border-[#D4AF37]/60 hover:bg-[#D4AF37] hover:text-[#06162F] transition-all">Choisir ce Pass</button>
+       <div id="paypal-button-1-month" class="min-h-11"></div>
       </div>
 
       <!-- 6-Month -->
@@ -389,7 +346,7 @@
         <li data-i18n="plan-6-f3">✓ 3 Appareils simultanés</li>
         <li data-i18n="plan-6-f4">✓ Films & Séries VOD</li>
        </ul>
-      <button onclick="openCheckout('3_months')" data-i18n="plan-get-premium" class="block w-full py-3 rounded-lg text-sm font-bold transition-all hover:scale-[1.02]" style="background: rgb(212, 175, 55); color: rgb(6, 22, 47);">Obtenir le Premium</button>
+      <div id="paypal-button-3-months" class="min-h-11"></div>
       </div>
 
       <!-- 12-Month -->
@@ -404,7 +361,7 @@
         <li data-i18n="plan-12-f3">✓ 5 Appareils simultanés</li>
         <li data-i18n="plan-12-f4">✓ VOD Illimitée + Sports VIP</li>
        </ul>
-       <button onclick="openCheckout('12_months')" data-i18n="plan-select" class="block w-full py-3 rounded-lg text-sm font-bold border border-[#D4AF37]/60 hover:bg-[#D4AF37] hover:text-[#06162F] transition-all">Choisir ce Pass</button>
+       <div id="paypal-button-12-months" class="min-h-11"></div>
       </div>
 
      </div>
@@ -515,7 +472,7 @@
         </div>
         <div class="rounded-3xl border border-white/10 bg-white/5 p-6">
           <h3 class="text-xl font-semibold mb-3 text-[#F5F7FA]">Activation rapide</h3>
-          <p class="text-sm opacity-70 text-[#F5F7FA]">Activation par e-mail instantanée après paiement, assistance WhatsApp 24/7 et configuration guidée pour tous les appareils.</p>
+          <p class="text-sm opacity-70 text-[#F5F7FA]">Activation par e-mail après paiement, assistance par e-mail et configuration guidée pour tous les appareils.</p>
         </div>
         <div class="rounded-3xl border border-white/10 bg-white/5 p-6">
           <h3 class="text-xl font-semibold mb-3 text-[#F5F7FA]">Compatible Smart TV</h3>
@@ -534,7 +491,7 @@
       <div class="grid gap-5">
         <details class="rounded-3xl border border-white/10 bg-white/5 p-6 text-white/90">
           <summary class="text-lg font-semibold cursor-pointer">Comment puis-je payer mon abonnement IPTV ?</summary>
-          <p class="mt-4 text-sm opacity-75 leading-relaxed">Vous pouvez payer votre abonnement via WhatsApp en utilisant des méthodes de paiement sécurisées prises en charge pour la France.</p>
+          <p class="mt-4 text-sm opacity-75 leading-relaxed">Payez votre abonnement en toute sécurité avec PayPal. Après confirmation du paiement, envoyez l'identifiant de transaction à getplayiptv@gmail.com pour organiser l'activation.</p>
         </details>
         <details class="rounded-3xl border border-white/10 bg-white/5 p-6 text-white/90">
           <summary class="text-lg font-semibold cursor-pointer">Est-ce que la connexion fonctionne sur Smart TV et Firestick ?</summary>
@@ -575,12 +532,6 @@
               <a href="mailto:getplayiptv@gmail.com" class="hover:text-[#D4AF37] transition-colors break-all">getplayiptv@gmail.com</a>
             </div>
 
-            <div class="flex items-center justify-center md:justify-start gap-3 rounded-lg border border-white/10 bg-white/[0.03] px-3 py-3">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg" class="text-[#25d366] shrink-0">
-                <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/>
-              </svg>
-              <a href="https://wa.me/212783086770" target="_blank" rel="noopener noreferrer" class="hover:text-[#D4AF37] transition-colors">+212 783 086 770</a>
-            </div>
           </div>
 
           <div class="flex items-center justify-center md:justify-start gap-3 pt-2">
@@ -588,11 +539,6 @@
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-5 h-5">
                 <path d="M4 4H20C21.1046 4 22 4.89543 22 6V18C22 19.1046 21.1046 20 20 20H4C2.89543 20 2 19.1046 2 18V6C2 4.89543 2.89543 4 4 4Z" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
                 <path d="M22 6L12 13L2 6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
-              </svg>
-            </a>
-            <a href="https://wa.me/212783086770" target="_blank" rel="noopener noreferrer" aria-label="Support WhatsApp" class="footer-social-link bg-emerald-500/10 border border-emerald-400/70 text-emerald-400 hover:bg-emerald-500/20 hover:scale-105 transition-all">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg" class="w-5 h-5">
-                <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/>
               </svg>
             </a>
           </div>
@@ -614,10 +560,13 @@
           <div class="mx-auto md:mx-0 h-1 w-8 rounded-full bg-[#D4AF37]"></div>
           <ul class="space-y-2 text-xs sm:text-sm text-white/80">
             <li><a href="guide-choisir-abonnement-iptv-france.html" class="block rounded-xl border border-white/10 bg-white/[0.04] px-3 py-3 hover:border-[#D4AF37]/60 hover:text-[#D4AF37] transition-all">Choisir un abonnement IPTV en France</a></li>
-            <li><a href="guide-iptv-smart-tv-installation.html" class="block rounded-xl border border-white/10 bg-white/[0.04] px-3 py-3 hover:border-[#D4AF37]/60 hover:text-[#D4AF37] transition-all">IPTV sur Smart TV : installation</a></li>
-            <li><a href="guide-iptv-firestick.html" class="block rounded-xl border border-white/10 bg-white/[0.04] px-3 py-3 hover:border-[#D4AF37]/60 hover:text-[#D4AF37] transition-all">IPTV sur Firestick : guide</a></li>
+            <li><a href="guide-iptv-smart-tv-installation.html" class="block rounded-xl border border-white/10 bg-white/[0.04] px-3 py-3 hover:border-[#D4AF37]/60 hover:text-[#D4AF37] transition-all">IPTV Smart TV France : installation</a></li>
+            <li><a href="guide-iptv-firestick.html" class="block rounded-xl border border-white/10 bg-white/[0.04] px-3 py-3 hover:border-[#D4AF37]/60 hover:text-[#D4AF37] transition-all">IPTV Firestick France : guide</a></li>
             <li><a href="guide-iptv-legal-france.html" class="block rounded-xl border border-white/10 bg-white/[0.04] px-3 py-3 hover:border-[#D4AF37]/60 hover:text-[#D4AF37] transition-all">IPTV légal en France</a></li>
-            <li><a href="guide-iptv-android-tv.html" class="block rounded-xl border border-white/10 bg-white/[0.04] px-3 py-3 hover:border-[#D4AF37]/60 hover:text-[#D4AF37] transition-all">IPTV sur Android TV</a></li>
+            <li><a href="guide-iptv-android-tv.html" class="block rounded-xl border border-white/10 bg-white/[0.04] px-3 py-3 hover:border-[#D4AF37]/60 hover:text-[#D4AF37] transition-all">IPTV Android TV France</a></li>
+            <li><a href="guide-iptv-samsung-smart-tv.html" class="block rounded-xl border border-white/10 bg-white/[0.04] px-3 py-3 hover:border-[#D4AF37]/60 hover:text-[#D4AF37] transition-all">IPTV Samsung Smart TV</a></li>
+            <li><a href="guide-iptv-lg-smart-tv.html" class="block rounded-xl border border-white/10 bg-white/[0.04] px-3 py-3 hover:border-[#D4AF37]/60 hover:text-[#D4AF37] transition-all">IPTV LG Smart TV</a></li>
+            <li><a href="guide-iptv-debutants-france.html" class="block rounded-xl border border-white/10 bg-white/[0.04] px-3 py-3 hover:border-[#D4AF37]/60 hover:text-[#D4AF37] transition-all">Guide IPTV débutant France</a></li>
           </ul>
         </div>
 
@@ -669,9 +618,10 @@
   </div>
 
   <!-- Compact Order Toast (replaces the large checkout modal) -->
-  <a id="whatsapp-float" class="whatsapp-float" href="https://wa.me/212783086770?text=Bonjour%2C%20je%20souhaite%20plus%20d'informations%20sur%20vos%20offres." target="_blank" rel="noreferrer noopener" aria-label="Ouvrir le chat WhatsApp">
-    <svg viewBox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg">
-      <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/>
+  <a id="email-float" class="email-float" href="mailto:getplayiptv@gmail.com" aria-label="Contacter par e-mail">
+    <svg viewBox="0 0 24 24" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
+      <path d="M4 5h16a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2Z"/>
+      <path d="m3 7 9 7 9-7"/>
     </svg>
   </a>
   <div id="order-toast" class="fixed bottom-6 right-6 z-50 hidden max-w-sm rounded-lg border border-[#D4AF37]/40 bg-[#0A1B3D] px-4 py-3 text-sm text-white shadow-2xl">
@@ -753,7 +703,6 @@
                 "footer-refund": "Refund Policy",
                 "footer-faq": "FAQ & Setup Guide",
                 "footer-copy": "© 2026 getplayiptv IPTV. All rights reserved.",
-                "wa-tooltip": "Contact WhatsApp Support"
             },
             fr: {
                 dir: 'ltr',
@@ -822,7 +771,6 @@
                 "footer-refund": "Politique de Remboursement",
                 "footer-faq": "FAQ & Guide d'Installation",
                 "footer-copy": "© 2026 getplayiptv IPTV. Tous droits réservés.",
-                "wa-tooltip": "Contacter le support WhatsApp"
             },
             ar: {
                 dir: 'rtl',
@@ -900,7 +848,7 @@
               title: "Privacy Policy",
               content: `
                 <h4 class="font-bold text-[#D4AF37] text-base mb-1">1. Information We Collect</h4>
-                <p class="mb-4 text-white/80">We only collect minimal details required to setup your subscription, such as your WhatsApp number and payment status. We do not store financial or credit card numbers.</p>
+                <p class="mb-4 text-white/80">We only collect minimal details required to set up your subscription, such as your email address and payment status. We do not store financial or credit card numbers.</p>
                 <h4 class="font-bold text-[#D4AF37] text-base mb-1">2. Data Protection</h4>
                 <p class="mb-4 text-white/80">All data transferred through our platform is encrypted via 256-bit SSL secure protocols. Your personal info is safe and will never be shared with outsiders.</p>
                 <h4 class="font-bold text-[#D4AF37] text-base mb-1">3. Cookies</h4>
@@ -1005,7 +953,7 @@
               title: "FAQ & Setup Guide",
               content: `
                 <h4 class="font-bold text-[#D4AF37] text-base mb-1">Q1: When will I get my premium details?</h4>
-                <p class="mb-4 text-white/80">Your secure access keys (Xtream API details & M3U URL link) are typically delivered via WhatsApp to the number you provide within 5 to 15 minutes after payment confirmation.</p>
+                <p class="mb-4 text-white/80">Your secure access keys (Xtream API details & M3U URL link) are typically delivered by email within 5 to 15 minutes after payment confirmation.</p>
                 <h4 class="font-bold text-[#D4AF37] text-base mb-1">Q2: How to configure the link on Smart TV / Firestick?</h4>
                 <div class="mb-4 text-white/80 space-y-1">
                   <p>1. Download premium player apps like <strong class="text-white">IPTV Smarters Pro</strong>, <strong class="text-white">IBO Player</strong>, or <strong class="text-white">TiviMate</strong> from your store.</p>
@@ -1020,7 +968,7 @@
               title: "FAQ & Guide d'Installation",
               content: `
                 <h4 class="font-bold text-[#D4AF37] text-base mb-1">Q1: Quand recevrai-je mes codes d'accès ?</h4>
-                <p class="mb-4 text-white/80">Vos codes d'activation (Xtream API et M3U) sont envoyés via WhatsApp (au numéro fourni) dans un délai de 5 à 15 minutes après validation du paiement.</p>
+                <p class="mb-4 text-white/80">Vos codes d'activation (Xtream API et M3U) sont envoyés par e-mail dans un délai de 5 à 15 minutes après validation du paiement.</p>
                 <h4 class="font-bold text-[#D4AF37] text-base mb-1">Q2: Comment installer l'abonnement sur Smart TV / Firestick ?</h4>
                 <div class="mb-4 text-white/80 space-y-1">
                   <p>1. Installez une application compatible comme <strong class="text-white">IPTV Smarters Pro</strong>, <strong class="text-white">IBO Player</strong>, ou <strong class="text-white">TiviMate</strong> depuis votre store.</p>
@@ -1035,7 +983,7 @@
               title: "الأسئلة الشائعة وطريقة التفعيل",
               content: `
                 <h4 class="font-bold text-[#D4AF37] text-base mb-1">س1: متى سأتوصل ببيانات الاشتراك الخاص بي؟</h4>
-                <p class="mb-4 text-white/80">يتم إرسال كود التفعيل (بيانات Xtream API ورابط ملف M3U) عبر واتساب على الرقم الذي قمت بتزويده خلال 5 إلى 15 دقيقة بعد تأكيد الدفع.</p>
+                <p class="mb-4 text-white/80">يتم إرسال كود التفعيل (بيانات Xtream API ورابط ملف M3U) عبر البريد الإلكتروني خلال 5 إلى 15 دقيقة بعد تأكيد الدفع.</p>
                 <h4 class="font-bold text-[#D4AF37] text-base mb-1">س2: كيف يمكنني تفعيل الخدمة على شاشات Smart TV أو الـ Firestick؟</h4>
                 <div class="mb-4 text-white/80 space-y-1">
                   <p>1. قم بتنزيل أحد تطبيقات التشغيل المعروفة مثل <strong class="text-white">IPTV Smarters Pro</strong> أو <strong class="text-white">IBO Player</strong> أو <strong class="text-white">TiviMate</strong> من متجر جهازك.</p>
@@ -1049,280 +997,128 @@
           }
         };
 
-        /* PayPal Pricing Mapping */
-        const planPrices = {
-          '1_month': '19.99',
-          '3_months': '29.99',
-          '12_months': '49.99'
-        };
-
         function getCurrentLang() {
           return document.documentElement.getAttribute('lang') || 'en';
         }
 
-        function getLocalizedText(key, values = {}) {
+        const paypalMessages = {
+          en: {
+            setupError: 'PayPal is not available right now. Please contact support by email.',
+            paymentSuccess: 'Payment complete. Email your PayPal transaction ID to getplayiptv@gmail.com to arrange activation.',
+            paymentError: 'Payment could not be completed. Please try again or contact support by email.'
+          },
+          fr: {
+            setupError: 'PayPal est indisponible pour le moment. Veuillez contacter le support par e-mail.',
+            paymentSuccess: 'Paiement effectué. Envoyez votre identifiant de transaction PayPal à getplayiptv@gmail.com pour organiser l’activation.',
+            paymentError: 'Le paiement n’a pas abouti. Réessayez ou contactez le support par e-mail.'
+          },
+          ar: {
+            setupError: 'PayPal غير متاح حالياً. المرجو التواصل مع الدعم عبر البريد الإلكتروني.',
+            paymentSuccess: 'تم الأداء. أرسل رقم معاملة PayPal إلى getplayiptv@gmail.com لترتيب التفعيل.',
+            paymentError: 'تعذر إتمام الأداء. حاول مرة أخرى أو تواصل مع الدعم عبر البريد الإلكتروني.'
+          }
+        };
+
+        function getPayPalMessage(key) {
           const lang = getCurrentLang();
-          const messages = {
-            paymentSuccessTitle: {
-              en: 'Payment successful',
-              fr: 'Paiement réussi',
-              ar: 'تم الدفع بنجاح'
-            },
-            paymentSuccess: {
-              en: `Thank you {name}. Your order has been recorded and activation details will be sent to your WhatsApp number soon.`,
-              fr: `Merci {name}. Votre commande est enregistrée et les détails d'activation seront envoyés sur votre WhatsApp bientôt.`,
-              ar: `شكراً {name}. تم تسجيل طلبك وسيتم إرسال تفاصيل التفعيل على رقم واتساب الخاص بك قريباً.`
-            },
-            paymentPendingTitle: {
-              en: 'Payment pending',
-              fr: 'Paiement en attente',
-              ar: 'الطلب قيد الانتظار'
-            },
-            paymentPending: {
-              en: `Payment verification is pending. The admin will contact you on WhatsApp shortly.`,
-              fr: `La vérification du paiement est en attente. L'administrateur vous contactera sur WhatsApp sous peu.`,
-              ar: `التحقق من الدفع قيد الانتظار. سيتواصل معك المشرف عبر واتساب قريباً.`
-            },
-            orderReceivedTitle: {
-              en: 'Order received',
-              fr: 'Commande enregistrée',
-              ar: 'تم تسجيل الطلب'
-            },
-            orderReceivedMessage: {
-              en: `Your order was received successfully. Activation details will be sent to your WhatsApp number after confirmation.\nStatus: {status}\nOrder reference: {orderNumber}`,
-              fr: `Votre commande a bien été enregistrée. Les détails d'activation vous seront envoyés sur WhatsApp après confirmation.\nStatut : {status}\nRéférence : {orderNumber}`,
-              ar: `تم تسجيل طلبك بنجاح. سيتم إرسال تفاصيل التفعيل إلى رقم واتساب الخاص بك بعد التأكيد.\nالحالة: {status}\nالمرجع: {orderNumber}`
-            },
-            orderReferenceLabel: {
-              en: 'Order reference',
-              fr: 'Référence de commande',
-              ar: 'مرجع الطلب'
-            }
-          };
-
-          let template = messages[key] ? (messages[key][lang] || messages[key].en) : '';
-          return template.replace(/\{(\w+)\}/g, (_, name) => values[name] || '');
+          return (paypalMessages[lang] || paypalMessages.en)[key];
         }
 
-        function showMessageModal(title, message) {
-          const modal = document.getElementById('info-modal');
-          const titleEl = document.getElementById('modal-title');
-          const bodyEl = document.getElementById('modal-body');
-
-          titleEl.textContent = title;
-          bodyEl.innerHTML = `<p class="text-sm leading-7">${message.replace(/\n/g, '<br>')}</p>`;
-
-          modal.classList.remove('hidden');
-          modal.classList.add('flex');
-          document.body.style.overflow = 'hidden';
-
-          setTimeout(() => {
-            const card = document.getElementById('modal-card');
-            card.classList.remove('scale-95', 'opacity-0');
-            card.classList.add('scale-100', 'opacity-100');
-          }, 10);
+        function setPayPalStatus(message) {
+          const status = document.getElementById('paypal-status');
+          if (status) status.textContent = message;
         }
 
-        const supabaseConfig = window.SUPABASE_CONFIG || {};
-          const isSupabaseConfigured = supabaseConfig.url && !supabaseConfig.url.includes('YOUR_PROJECT_REF') && supabaseConfig.anonKey && !supabaseConfig.anonKey.includes('YOUR_');
-          const supabaseClient = isSupabaseConfigured ? window.supabase.createClient(supabaseConfig.url, supabaseConfig.anonKey) : null;
-
-          function persistLatestOrder(phone, plan, orderNumber, status) {
-            const orderSummary = {
-              phone,
-              plan,
-              orderNumber,
-              status,
-              updatedAt: new Date().toISOString()
-            };
-            try {
-              window.localStorage.setItem('getplayiptv_latest_order', JSON.stringify(orderSummary));
-            } catch (error) {
-              console.warn('Could not save order summary locally:', error);
-            }
-            return orderSummary;
-          }
-
-          async function saveOrderToSupabase(phone, plan, status) {
-            const orderNumber = `GP-${Date.now()}`;
-            if (!supabaseClient) return { orderNumber };
-            const customerEmailPlaceholder = `${phone}@wa.local`;
-            const { error } = await supabaseClient.from('orders').insert({
-              order_number: orderNumber,
-              customer_email: customerEmailPlaceholder,
-              amount: Number(planPrices[plan] || 9.99),
-              plan_name: plan,
-              status,
-              notes: `whatsapp:${phone}`
-            });
-            if (error) console.error('Supabase order error:', error);
-            return { orderNumber };
-            const target = adminNumber || '212783086770';
-            const message = encodeURIComponent(
-              `New order:\n\nWhatsApp: ${phone}\nPlan: ${plan}\nAmount: $${amount}\nStatus: ${status}\n\nPlease process this order and send activation details to the customer.`
-            );
-            const waLink = `https://wa.me/${target}?text=${message}`;
-            window.open(waLink, '_blank');
-          }
-
-          async function sendOrderNotification(phone, plan, amount, status) {
-            // Try server-side function first (if available), otherwise open WhatsApp to admin
-            if (!supabaseClient || !supabaseClient.functions) {
-              fallbackWhatsAppNotification(phone, plan, amount, status);
-              return;
-            }
-
-            try {
-              const response = await supabaseClient.functions.invoke('order-notify-whatsapp', {
-                body: JSON.stringify({ phone, plan, amount, status })
-              });
-
-              if (response.error) {
-                console.error('Supabase function error:', response.error);
-                fallbackWhatsAppNotification(phone, plan, amount, status);
-              }
-            } catch (error) {
-              console.error('Failed to send order notification:', error);
-              fallbackWhatsAppNotification(phone, plan, amount, status);
-            }
-          }
-
-        // Proceed using WhatsApp: global helper used by the button
-        async function proceedWithWhatsApp() {
-          if (!validatePhone()) return;
-          const phone = document.getElementById('customer-phone').value.trim().replace(/[^0-9]/g, '');
-          const plan = document.getElementById('selected-plan').value || '1_month';
-          const amountNum = Number(planPrices[plan] || 9.99);
-
-          const { orderNumber } = await saveOrderToSupabase(phone, plan, 'pending');
-          persistLatestOrder(phone, plan, orderNumber, 'pending');
-          sendOrderNotification(phone, plan, amountNum, 'pending');
-
-          // Open WhatsApp to admin with order details so admin can manually message customer
-          const ADMIN_WHATSAPP_NUMBER = (window.SUPABASE_CONFIG && window.SUPABASE_CONFIG.admin_whatsapp) || '212783086770';
-          const message = encodeURIComponent(`New order:\nWhatsApp: ${phone}\nPlan: ${plan}\nAmount: $${amountNum}\nStatus: pending`);
-          const waLink = `https://wa.me/${ADMIN_WHATSAPP_NUMBER}?text=${message}`;
-          window.open(waLink, '_blank');
-
-          showMessageModal(
-            getLocalizedText('orderReceivedTitle'),
-            getLocalizedText('orderReceivedMessage', { status: 'Activation pending', orderNumber })
-          );
-          closeCheckout();
+        function showOrderToast(title, message) {
+          const toast = document.getElementById('order-toast');
+          document.getElementById('order-toast-title').textContent = title;
+          document.getElementById('order-toast-body').textContent = message;
+          toast.classList.remove('hidden');
         }
 
-        // Function to validate phone format inline without popup alert
-        function validatePhone() {
-          const phoneInput = document.getElementById('customer-phone');
-          const phoneError = document.getElementById('phone-error');
-          const raw = phoneInput.value.trim();
-          const digits = raw.replace(/[^0-9]/g, '');
-
-          // Basic validation: country code + number, 7-15 digits
-          if (!digits || digits.length < 7 || digits.length > 15) {
-            phoneError.classList.remove('hidden');
-            phoneInput.classList.add('border-red-500');
-            phoneInput.classList.remove('border-white/15');
-            return false;
-          } else {
-            phoneError.classList.add('hidden');
-            phoneInput.classList.remove('border-red-500');
-            phoneInput.classList.add('border-white/15');
-            return true;
-          }
+        async function paypalApiRequest(path, body) {
+          const response = await fetch(path, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(body)
+          });
+          const result = await response.json();
+          if (!response.ok) throw new Error(result.error || 'PayPal request failed.');
+          return result;
         }
 
-        // Add real-time event listener to clear error as user types
-        const phoneInput = document.getElementById('customer-phone');
-        if (phoneInput) {
-          phoneInput.addEventListener('input', function() {
-            const phoneError = document.getElementById('phone-error');
-            this.classList.remove('border-red-500');
-            this.classList.add('border-white/15');
-            if (phoneError) {
-              phoneError.classList.add('hidden');
-            }
+        async function loadPayPalSdk(clientId) {
+          if (window.paypal) return;
+
+          await new Promise((resolve, reject) => {
+            const script = document.createElement('script');
+            script.src = `https://www.paypal.com/sdk/js?client-id=${encodeURIComponent(clientId)}&currency=EUR&intent=capture`;
+            script.onload = resolve;
+            script.onerror = () => reject(new Error('PayPal SDK failed to load.'));
+            document.head.appendChild(script);
           });
         }
 
-        function getOrderMessage(plan) {
-            const lang = getCurrentLang();
-            const planKeys = {
-              '1_month': 'plan-1-title',
-              '3_months': 'plan-6-title',
-              '12_months': 'plan-12-title'
-            };
-            const labelKey = planKeys[plan] || plan;
-            const planLabel = (translations[lang] && translations[lang][labelKey]) || (translations.en && translations.en[labelKey]) || plan;
+        async function initializePayPalButtons() {
+          try {
+            const response = await fetch('/api/paypal/config');
+            const config = await response.json();
+            if (!response.ok || !config.clientId) throw new Error(config.error || 'PayPal is not configured.');
 
-            const messages = {
-              en: `Hello, I want to order the ${planLabel}.`,
-              fr: `Bonjour, je souhaite commander le ${planLabel}.`,
-              ar: `السلام عليكم، أريد طلب ${planLabel}.`
-            };
+            await loadPayPalSdk(config.clientId);
 
-            return encodeURIComponent(messages[lang] || messages.en);
-        }
+            const plans = [
+              { id: '1_month', container: 'paypal-button-1-month' },
+              { id: '3_months', container: 'paypal-button-3-months' },
+              { id: '12_months', container: 'paypal-button-12-months' }
+            ];
 
-        function openCheckout(plan) {
-            const adminNumber = '212783086770';
-            const message = getOrderMessage(plan);
-            const waLink = `https://wa.me/${adminNumber}?text=${message}`;
-            window.open(waLink, '_blank');
+            await Promise.all(plans.map(({ id, container }) => window.paypal.Buttons({
+              style: { layout: 'vertical', color: 'gold', shape: 'rect', label: 'paypal' },
+              createOrder: async () => {
+                const result = await paypalApiRequest('/api/paypal/create-order', { plan: id });
+                return result.orderID;
+              },
+              onApprove: async (data) => {
+                try {
+                  const result = await paypalApiRequest('/api/paypal/capture-order', {
+                    orderID: data.orderID,
+                    plan: id
+                  });
+                  showOrderToast('PayPal', `${getPayPalMessage('paymentSuccess')} ${result.captureID}`);
+                } catch (error) {
+                  console.error('PayPal capture failed:', error);
+                  showOrderToast('PayPal', getPayPalMessage('paymentError'));
+                }
+              },
+              onError: (error) => {
+                console.error('PayPal checkout failed:', error);
+                showOrderToast('PayPal', getPayPalMessage('paymentError'));
+              }
+            }).render(`#${container}`)));
+          } catch (error) {
+            console.error('PayPal initialization failed:', error);
+            setPayPalStatus(getPayPalMessage('setupError'));
+          }
         }
 
         document.addEventListener('DOMContentLoaded', function() {
-            const floatButton = document.getElementById('whatsapp-float');
+            initializePayPalButtons();
+            document.getElementById('order-toast-close').addEventListener('click', () => {
+              document.getElementById('order-toast').classList.add('hidden');
+            });
+
+            const floatButton = document.getElementById('email-float');
             if (floatButton) {
-              const adminNumber = '212783086770';
               const lang = getCurrentLang();
               const defaultMessage = encodeURIComponent({
                 en: 'Hello, I want more information about your plans.',
                 fr: 'Bonjour, je souhaite plus d\u00e9tails sur vos offres.',
                 ar: 'السلام عليكم، أريد المزيد من المعلومات حول باقاتكم.'
               }[lang] || 'Hello, I want more information about your plans.');
-              floatButton.href = `https://wa.me/${adminNumber}?text=${defaultMessage}`;
+              floatButton.href = `mailto:getplayiptv@gmail.com?subject=${encodeURIComponent('Information')}&body=${defaultMessage}`;
             }
         });
-
-        async function handleProceed(e) {
-            e.preventDefault();
-            if (!validatePhone()) return;
-
-            const phone = document.getElementById('customer-phone').value.trim().replace(/[^0-9]/g, '');
-            const plan = document.getElementById('selected-plan').value;
-            const amount = Number(planPrices[plan] || 9.99);
-            const { orderNumber } = await saveOrderToSupabase(phone, plan, 'pending');
-            persistLatestOrder(phone, plan, orderNumber, 'pending');
-            sendOrderNotification(phone, plan, amount, 'pending');
-
-            // WhatsApp fallback - show contact info
-            showMessageModal(
-              getLocalizedText('orderReceivedTitle'),
-              getLocalizedText('orderReceivedMessage', { status: 'Activation pending', orderNumber })
-            );
-            closeCheckout();
-        }
-
-        function closeCheckout() {
-            // Hide compact toast and reset inline phone input (if present)
-            const toast = document.getElementById('order-toast');
-            const phoneInput = document.getElementById('customer-phone');
-            const phoneError = document.getElementById('phone-error');
-
-            if (toast) {
-              toast.classList.add('hidden');
-            }
-
-            if (phoneInput) {
-              phoneInput.value = '';
-              phoneInput.classList.remove('border-red-500');
-              phoneInput.classList.add('border-white/15');
-            }
-            if (phoneError) {
-              phoneError.classList.add('hidden');
-            }
-        }
 
         function setLang(lang) {
             const config = translations[lang];
@@ -1431,15 +1227,6 @@
                 closeModal();
             }
         });
-
-        const _checkoutModalEl = document.getElementById('checkout-modal');
-        if (_checkoutModalEl) {
-          _checkoutModalEl.addEventListener('click', function(e) {
-            if (e.target === this) {
-              closeCheckout();
-            }
-          });
-        }
 
         lucide.createIcons();
         setLang('fr');

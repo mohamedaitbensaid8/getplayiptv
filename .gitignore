@@ -3,13 +3,7 @@ node_modules/
 .DS_Store
 *.log
 
-# Supabase config with secrets
-supabase-config.js
-
 # Local files not needed in repo
 *.local
 *.env
 .env*
-# Private admin panel
-admin-login.html
-admin.html

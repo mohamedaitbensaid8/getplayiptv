@@ -1,5 +1,3 @@
 User-agent: *
 Allow: /
-Disallow: /admin.html
-
 Sitemap: https://getplayiptv.com/sitemap.xml
