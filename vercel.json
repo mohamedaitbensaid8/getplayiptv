@@ -2,6 +2,10 @@
   "cleanUrls": true,
   "rewrites": [
     {
+      "source": "/",
+      "destination": "/maintenance.html"
+    },
+    {
       "source": "/index",
       "destination": "/index.html"
     },
